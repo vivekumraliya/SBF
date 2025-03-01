@@ -1,0 +1,244 @@
+/* Fix for Any Wide Elements */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Content */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* max-width: 900px; */
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+/* Father's Name (Left Side) */
+.father-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Title (Center) */
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Contact Number (Right Side) */
+.contact-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Form Container */
+.form-container {
+  /* max-width: 700px; */
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  max-width: 90%;
+  overflow-x: hidden;
+  flex-wrap: nowrap;
+}
+
+/* Form Title */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 1rem;
+  color: #ffea00;
+}
+
+/* Fieldset Styling */
+fieldset {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  margin-top: 0.5rem;
+  color: #fff;
+  align-self: flex-start;
+  width: 100%;
+  text-align: left;
+}
+
+/* Input Group */
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Input and Textarea Styling */
+input, textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.6rem;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Input Focus */
+input:focus, textarea:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Placeholder Styling */
+::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Button Hover */
+button:hover {
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .father-name, .contact-number {
+      margin-bottom: 5px;
+  }
+
+  .form-container {
+      width: 90%;
+      padding: 1.5rem;
+  }
+
+  .input-group {
+      width: 100%;
+  }
+
+  input, textarea, button {
+      width: 100%;
+  }
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Content */
+.header-content {
+  display: flex;
+  justify-content: space-between;  /* Ensures spacing like Desktop */
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: nowrap; /* Prevents items from stacking */
+}
+
+/* Father's Name (Left) */
+.father-name {
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap; /* Prevents line break */
+}
+
+/* Title (Center) */
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+  white-space: nowrap;
+}
+
+/* Contact Number (Right) */
+.contact-number {
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: white;
+}
+
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+  .header-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap; /* Keeps everything in one line */
+      padding: 0 10px; /* Adds space on small screens */
+  }
+
+  .father-name, .contact-number, h1 {
+      font-size: 16px; /* Adjust font size for mobile */
+  }
+}
+

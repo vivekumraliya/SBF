@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Balaji Fiber - PVC Door Fitting Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <span class="father-name">Manish Gajjar</span>
+      <h1>Shree Balaji Fiber</h1>
+      <span class="contact-number">9909857055</span>
+    </div>
+  </header>
+  
+  <div class="form-container">
+    <h2>PVC Door Fitting Data Form</h2>
+    <form id="pvcForm">
+      <fieldset>
+        <legend>Customer Information</legend>
+        
+        <div class="input-group">
+          <label for="name">Customer Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="firm-name">Firm Name:</label>
+          <input type="text" id="firm-name" name="firm_name">
+        </div>
+        
+        <div class="input-group">
+          <label for="mobile">Mobile Number:</label>
+          <input type="tel" id="mobile" name="mobile" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+        </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Job Details</legend>
+        <label for="measurement-date">Measurement Date:</label>
+        <input type="date" id="measurement-date" name="measurement_date" required>
+
+        <label for="measurement">Measurement:</label>
+        <input type="text" id="measurement" name="measurement" placeholder="e.g., 7ft x 3ft" required>
+        
+        <label for="hinge-measurement">Hinge Measurement (Optional):</label>
+        <input type="text" id="hinge-measurement" name="hinge_measurement" placeholder="e.g., 2 inches">
+        
+        <label for="fitting-date">Fitting Date:</label>
+        <input type="date" id="fitting-date" name="fitting_date" required>
+        
+        <label for="price">Price (₹):</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Additional Details</legend>
+        <label for="remarks">Remarks/Notes:</label>
+        <textarea id="remarks" name="remarks" rows="4"></textarea>
+      </fieldset>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("pvcForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevents default form submission
+
+      // Get form data
+      let name = document.getElementById("name").value;
+      let firmName = document.getElementById("firm-name").value;
+      let mobile = document.getElementById("mobile").value;
+      let address = document.getElementById("address").value;
+      let measurementDate = document.getElementById("measurement-date").value;
+      let measurement = document.getElementById("measurement").value;
+      let hingeMeasurement = document.getElementById("hinge-measurement").value || "N/A";
+      let fittingDate = document.getElementById("fitting-date").value;
+      let price = document.getElementById("price").value;
+      let remarks = document.getElementById("remarks").value || "No remarks";
+
+      // Format message for WhatsApp
+      let whatsappMessage = 
+        `Customer Name: ${name}%0A` +
+        `Firm Name: ${firmName}%0A` +
+        `Mobile Number: ${mobile}%0A` +
+        `Address: ${address}%0A%0A` +
+        `Measurement Date: ${measurementDate}%0A` +
+        `Measurement: ${measurement}%0A` +
+        `Hinge Measurement: ${hingeMeasurement}%0A` +
+        `Fitting Date: ${fittingDate}%0A` +
+        `Price: ₹${price}%0A%0A` +
+        `Remarks: ${remarks}`;
+
+      // WhatsApp API link
+      let whatsappURL = `https://wa.me/9725123443?text=${whatsappMessage}`;
+
+      // Redirect to WhatsApp
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>
